@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+/*NAV*/
+.site_nav{
+  background: var(--nav-bg);
+  color: var(--nav-text);
+}
+.site_nav a{
+  color: var(--nav-text);
+  text-decoration: none;
+  font-size: var(--nav-a-size);
+  line-height: 1.2;
+}
+.site_nav a:hover,
+.site_nav a:focus-visible{
+  color: var(--nav-text-hover);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 4px;
+}
+.nav_list {
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  display: none;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.nav_list li { 
+  text-align: center;
+  padding-left: 5rem;
+  padding-right: 5rem; 
+  }
+.nav_list li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Estado abierto en móvil */
+.nav_list.show { display: flex; }
+
+/* Botón hamburguesa (visible en móvil/tablet) */
+.nav__toggle {
+  color: var(--nav-toggle-color);	
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: .4rem .6rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-size: var(--nav-a-size);
+  margin: .5rem;
+}
+
+/* ===== Desktop (>= 769px): menú siempre visible, botón oculto ===== */
+@media (min-width: 992px) {
+  .nav__toggle { display: none; }
+  .nav_list {
+    display: flex;              /* visible en escritorio */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 1rem;
+  }
+  .nav_list li { flex: 0 0 auto; text-align: left; }
+}

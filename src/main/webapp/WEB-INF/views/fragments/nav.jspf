@@ -1,41 +1,12 @@
 <button class="nav__toggle" aria-expanded="false" aria-controls="menu-list">
-    &#9776;
+    &#9776; Men� de opciones
 </button>
 
-<ul id="menu-list" class="nav_list">
-    <li><a href="<c:url value='/'/>">Inicio</a></li>
-    <li><a href="<c:url value='/abogados'/>">Abogados</a></li>
-    <li><a href="<c:url value='/clientes'/>">Clientes</a></li>
-    <li><a href="<c:url value='/casos'/>">Casos</a></li>
-    <li><a href="<c:url value='/contacto'/>">Contacto</a></li>
-    <li><a href="<c:url value='/herramientas'/>">Herramientas</a></li>
-</ul>
-
-<script>
-(function(){
-  const btn  = document.querySelector('.nav__toggle');
-  const menu = document.getElementById('menu-list');
-  if (!btn || !menu) return;
-
-  // En móviles: aseguramos cerrado en carga
-  const mq = window.matchMedia('(max-width: 768px)');
-  function ensureState() {
-    if (mq.matches) {           // móvil/tablet
-      menu.classList.remove('show');
-      btn.setAttribute('aria-expanded', 'false');
-    } else {                    // desktop
-      // el CSS ya lo muestra; el botón se oculta
-      menu.classList.remove('show');
-      btn.setAttribute('aria-expanded', 'false');
-    }
-  }
-  ensureState();
-  mq.addEventListener?.('change', ensureState);
-
-  btn.addEventListener('click', () => {
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!expanded));
-    menu.classList.toggle('show');
-  });
-})();
-</script>
+	<ul id="menu-list" class="nav_list">
+    	<li><a href="<c:url value='/'/>">Inicio</a></li>
+    	<li><a href="<c:url value='/abogados'/>">Abogados</a></li>
+    	<li><a href="<c:url value='/clientes'/>">Clientes</a></li>
+    	<li><a href="<c:url value='/casos'/>">Casos</a></li>
+    	<li><a href="<c:url value='/contacto'/>">Contacto</a></li>
+    	<li><a href="<c:url value='/herramientas'/>">Herramientas</a></li>
+	</ul>

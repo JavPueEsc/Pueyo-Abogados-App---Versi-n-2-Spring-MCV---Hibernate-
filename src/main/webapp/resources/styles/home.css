@@ -1,5 +1,25 @@
 @charset "UTF-8";
 
-h1 {
-	color: pink;
+.bannerImg{
+	padding-left:5rem;
+	padding-right:5rem;
 }
+
+p, ul.homeList >li{
+  color: var(--body-text);
+  padding-left: 5rem;
+  padding-right:5rem;
+  }
+  
+  ul.homeList{
+  list-style-type: none;
+  }
+  
+  ul.homeList li::before {
+  content: "-";          
+  margin-right: 1rem;     
+  color: var(--body-text);        
+  font-weight: bold;     
+}
+   
+.homeBackgroundImage { margin-top:auto; }
