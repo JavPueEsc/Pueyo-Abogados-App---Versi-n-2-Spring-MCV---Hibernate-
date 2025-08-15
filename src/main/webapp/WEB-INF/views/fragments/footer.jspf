@@ -1,0 +1,3 @@
+<small>&copy; <%= java.time.Year.now() %> Javier Pueyo Escalante</small>
+<br/>
+<small>jpueyodev@jpueyodev.com</small>

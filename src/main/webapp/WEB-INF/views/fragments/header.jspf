@@ -1,0 +1,17 @@
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<c:url value="/resources/images/header/banner/" var="bannerDir"/>
+
+
+<div class="bannerImg">
+	<a class="brand" href="${pageContext.request.contextPath}/" aria-label="Inicio">
+    <img
+      src="${bannerDir}banner.png"
+      alt="banner">
+  </a>
+</div>
+
+
+
+

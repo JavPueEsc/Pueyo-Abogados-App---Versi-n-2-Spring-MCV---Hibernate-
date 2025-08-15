@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.site_footer{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;		
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  font-size: var(--footer-size);
+}
