@@ -1,7 +1,7 @@
 # PueyoAbogadosApp2
 
 Aplicación Java Spring MVC desplegable como WAR para Tomcat.  
-**Versión actual:** `v0.1.0`
+**Versión actual:** `v0.1.1`
 
 Este proyecto sigue **Versionado Semántico (SemVer)**:
 - **API público** (lo que me comprometo a mantener estable): ver [`docs/API_PUBLIC.md`](./docs/API_PUBLIC.md).

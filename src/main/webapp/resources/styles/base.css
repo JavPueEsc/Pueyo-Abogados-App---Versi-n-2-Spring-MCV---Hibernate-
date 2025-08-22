@@ -28,7 +28,7 @@
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
  
   --h1-size: clamp(3.2rem, 2.8rem + 2vw, 5.2rem);
-  --nav-a-size: clamp(1.2rem, 1.6rem + 0.4vw, 2rem);
+  --nav-a-size: clamp(0.95rem, 0.85rem + 0.5vw, 1.4rem);
   --p-size: clamp(1.8rem, 1.1rem + 0.7vw, 2.2rem);
   --footer-size: clamp(1.05rem, 0.95rem + 0.3vw, 1.3rem);
   
@@ -39,7 +39,8 @@
 /* Elementos HTML */
 html, body { height: 100%; }
 body{background: var(--body-bg); color:var(--body-text); font-size: var(--p-size); font-family: var(--font-sans); margin:0;}
-img { display: block; width: 100%; height: auto; }
-h1 { color: var(--body-text); text-align: center; font-size: var(--h1-size); line-height: var(--lh-tight); margin-block: 1.5rem 1rem;}
+img { display: block; width: 60%; height: auto; margin-inline: auto;}
+h1 { color: var(--body-text); font-size: var(--h1-size); line-height: var(--lh-tight); margin-block: 1.5rem 1rem;}
 p { color: var(--content-text); line-height:var(--lh-tight);}
+a { color: var(--content-text); line-height:var(--lh-tight);}
 ul { padding-inline-start: 0; list-style-position: inside; }

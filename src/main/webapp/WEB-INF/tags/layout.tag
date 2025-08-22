@@ -28,13 +28,8 @@
   
   <main class="site_main" id="content" role="main" tabindex="-1">
   	
-  	<div class="container">
+  	<div class="container text_center">
     	<jsp:doBody/>
-    	<c:url value="/resources/images/main/fondo/" var="fondoDir"/>
-    
-    	<a class="brand" href="${pageContext.request.contextPath}/" aria-label="Inicio">
-    		<img class="mainBackgroung"	src="${fondoDir}fondo.png" alt="fondo">
-  		</a>
     </div>
   </main>
 

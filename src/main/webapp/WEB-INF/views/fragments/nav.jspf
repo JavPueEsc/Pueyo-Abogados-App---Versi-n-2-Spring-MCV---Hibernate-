@@ -8,5 +8,5 @@
     	<li><a href="<c:url value='/clientes'/>">Clientes</a></li>
     	<li><a href="<c:url value='/casos'/>">Casos</a></li>
     	<li><a href="<c:url value='/contacto'/>">Contacto</a></li>
-    	<li><a href="<c:url value='/herramientas'/>">Herramientas</a></li>
+    	<li><a href="<c:url value='/connectionStatus'/>">Comprobar conexión</a></li>
 	</ul>

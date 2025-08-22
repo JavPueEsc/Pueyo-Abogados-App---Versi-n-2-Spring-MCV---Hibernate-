@@ -2,11 +2,9 @@
 
 
 body.site { min-height: 100vh; display: flex; flex-direction: column; }
-.site_main { flex: 1 0 auto; display: flex; flex-direction: column; }
-.site_main::before { content: ""; flex: 1 1 auto; }
-.site_main > :last-child { margin-bottom: 0; }
-.site_footer > :first-child { margin-top: 0; }
 
+.site_footer { margin-top: auto; }
+.text_center{text-align:center;}
 
 
 

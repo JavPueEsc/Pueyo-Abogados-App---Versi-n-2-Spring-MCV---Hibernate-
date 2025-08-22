@@ -5,8 +5,9 @@
 
 
 <t:layout title="Pueyo Abogados 2 - Home">
-   
-
+ 
+ <h1>Inicio</h1>
+ <p>Debe seleccionar una opción en el menú.</p>
 
 </t:layout>
 

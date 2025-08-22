@@ -24,13 +24,13 @@
   padding: 0.75rem 1rem;
   display: none;
   flex-direction: column;
-  gap: .5rem;
+  gap: .1rem;
 }
 
 .nav_list li { 
   text-align: center;
-  padding-left: 5rem;
-  padding-right: 5rem; 
+  padding-left: 1rem;
+  padding-right: 1rem; 
   }
 .nav_list li a {
   text-decoration: none;
@@ -59,9 +59,15 @@
   .nav_list {
     display: flex;              /* visible en escritorio */
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
-    gap: 1rem 1rem;
+    gap: 2rem;
+    padding: 0.5rem 0; 
   }
-  .nav_list li { flex: 0 0 auto; text-align: left; }
+  .nav_list li { padding: 0; flex: 0 0 auto; text-align: left; }
+  
+  .nav_list li a {
+    display: block;             
+    padding: 0.5rem 0.75rem;
+  }
 }
