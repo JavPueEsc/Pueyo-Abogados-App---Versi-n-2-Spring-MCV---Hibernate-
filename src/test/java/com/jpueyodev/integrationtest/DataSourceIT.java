@@ -1,7 +1,7 @@
 package com.jpueyodev.integrationtest;
 
 import javax.sql.DataSource;
-import com.jpueyodev.PersistenceConfig;
+import com.jpueyodev.HibernateConfig;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -12,7 +12,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = PersistenceConfig.class,
+@ContextConfiguration(classes = HibernateConfig.class,
                       initializers = TestcontainersMySqlInitializer.class)
 class DataSourceIT {
 

@@ -44,3 +44,7 @@ h1 { color: var(--body-text); font-size: var(--h1-size); line-height: var(--lh-t
 p { color: var(--content-text); line-height:var(--lh-tight);}
 a { color: var(--content-text); line-height:var(--lh-tight);}
 ul { padding-inline-start: 0; list-style-position: inside; }
+table{border:1px solid black; border-collapse:collapse;}
+th, td{border: 1px solid black; padding:1rem}
+.tabla {display: grid; place-items: center;}
+.tabla > table { width: auto;}

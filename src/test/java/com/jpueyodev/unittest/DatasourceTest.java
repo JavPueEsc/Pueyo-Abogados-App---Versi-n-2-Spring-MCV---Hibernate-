@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = com.jpueyodev.PersistenceConfig.class)
+@ContextConfiguration(classes = com.jpueyodev.DatasourceConfig.class)
 @TestPropertySource("classpath:db-test.properties")
 public class DatasourceTest {
 

@@ -1,15 +1,17 @@
 package com.jpueyodev;
 
 import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 @Configuration
 @PropertySource("classpath:db.properties")
-public class PersistenceConfig {
+public class DatasourceConfig {
 
 	@Value("${db.driverClass}")
 	private String driverClass;
@@ -47,5 +49,5 @@ public class PersistenceConfig {
 			
 			return datasource;
 		}
+	
 }
-
