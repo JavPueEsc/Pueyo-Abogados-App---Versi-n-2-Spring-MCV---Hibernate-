@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="<c:url value='/resources/styles/layout.css'/>">
   <link rel="stylesheet" href="<c:url value='/resources/styles/nav.css'/>">
   <link rel="stylesheet" href="<c:url value='/resources/styles/footer.css'/>">
+  <link rel="stylesheet" href="<c:url value='/resources/styles/form.css'/>">
 </head>
 <body class="site">
   <header class="site_header" role="banner">

@@ -6,17 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jpueyodev.Lawyer;
 import com.jpueyodev.dao.LawyerDAO;
 
 @Controller
+@RequestMapping("/lawyers")
 public class Controller_Lawyer {
 
 	@Autowired
 	private LawyerDAO lawyerDAO;
 	
-	@GetMapping("lawyers")
+	@GetMapping
 	public String LawyerList(Model modelo) {
 		System.out.println("Entrando en listado de abogados");
 		
@@ -24,5 +28,19 @@ public class Controller_Lawyer {
 		modelo.addAttribute("lawyers", lawyers);
 		
 		return "Lawyers-list";
+	}
+	
+	@GetMapping("/new") 
+	public String showLawyerInsertForm(Model model) {
+		var lawyer = new Lawyer();
+		model.addAttribute("modo", "insert");
+		model.addAttribute("lawyer", lawyer);
+		return "Lawyers-form";
+	}
+	
+	@PostMapping
+	public String insertLawyer(@ModelAttribute("lawyer") Lawyer lawyer) {
+		lawyerDAO.insertLawyer(lawyer);
+		return "redirect:/lawyers";
 	}
 }

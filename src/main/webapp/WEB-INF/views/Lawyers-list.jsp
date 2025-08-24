@@ -35,4 +35,7 @@
     		</c:forEach>
     	</table>
  		</div>
+ 		<br/>
+ 		<a href="${pageContext.request.contextPath}/lawyers/new" class="btn">Agregar abogado</a>
+
     </t:layout>

@@ -17,11 +17,19 @@ public class LawyerDAOImpl implements LawyerDAO{
 	SessionFactory sessionFactory;
 	
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public List<Lawyer> getLawyers() {
 		Session session = sessionFactory.getCurrentSession();
 		System.out.println("Transacción activa: "+org.springframework.transaction.support.TransactionSynchronizationManager.isActualTransactionActive());
 		return session.createQuery("FROM Lawyer",Lawyer.class).list();
+	}
+
+	@Override
+	@Transactional
+	public void insertLawyer(Lawyer lawyer) {
+		Session session = sessionFactory.getCurrentSession();
+		System.out.println("Transacción activa: "+org.springframework.transaction.support.TransactionSynchronizationManager.isActualTransactionActive());
+		session.persist(lawyer);
 	}
 
 }

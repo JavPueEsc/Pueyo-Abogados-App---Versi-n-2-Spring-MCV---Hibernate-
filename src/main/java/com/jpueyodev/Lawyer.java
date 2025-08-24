@@ -2,6 +2,8 @@ package com.jpueyodev;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,6 +30,7 @@ public class Lawyer {
 	@Column(name="mailAbogado")
 	private String mail;
 	@Column(name="fechaAltaAbogado")
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private LocalDate fechaAlta;
 	@Column(name="numColegiadoAbogado")
 	private String numColegiado;

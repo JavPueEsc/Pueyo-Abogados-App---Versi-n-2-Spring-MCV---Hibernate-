@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+.page-center{
+  display:grid;
+  justify-items:center;
+  padding: 1rem 2rem 2rem;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns: 180px min(420px, 60vw);
+  gap:12px 16px;
+  align-items:center;
+  width:100%;
+  max-width:700px;
+}
+
+.field{ display:contents; }
+
+.form-grid label{ justify-self:end; }
+
+.form-grid input, .form-grid select, .form-grid textarea{
+  width:100%;
+  box-sizing:border-box;
+  padding:.5rem .6rem;
+}
+
+/* Los errores debajo ocupando todo el ancho */
+.error{
+  grid-column:1 / -1;
+  color:#c00;
+  font-size:.9rem;
+  margin-top:.25rem;
+}
+
+/* Botones dentro de la grid y alineados al ancho del formulario */
+.actions{
+  grid-column:1 / -1;       /* <- hace que la fila de botones tenga el mismo ancho */
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:.75rem;
+}
+
+.actions input[type="submit"],
+.actions input[type="button"]{
+  padding:.6rem 1rem;
+  cursor:pointer;
+  border-radius:6px;
+  border:1px solid #0D2A3A;
+  box-sizing:border-box;
+  min-width:160px;          /* opcional, para que no queden muy pequeños */
+}
+
+/* Estilos opcionales */
+.btn--primary{ background:#0D2A3A; color:#fff; }
+.btn--secondary{ background:#fff; color:#0D2A3A; }
+.actions :hover{ filter:brightness(1.05); }
