@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.jpueyodev.Lawyer;
 import com.jpueyodev.dao.LawyerDAO;
@@ -42,5 +43,13 @@ public class Controller_Lawyer {
 	public String insertLawyer(@ModelAttribute("lawyer") Lawyer lawyer) {
 		lawyerDAO.insertLawyer(lawyer);
 		return "redirect:/lawyers";
+	}
+	
+	@GetMapping("/details") 
+	public String showLawyerDetails(@RequestParam("lawyerId") int id, Model model) {
+		var lawyer = lawyerDAO.getLawyerById(id);
+		model.addAttribute("modo", "show");
+		model.addAttribute("lawyer", lawyer);
+		return "lawyers-details";
 	}
 }

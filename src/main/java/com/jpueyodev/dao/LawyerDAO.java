@@ -9,4 +9,6 @@ public interface LawyerDAO {
 	public List<Lawyer> getLawyers();
 	
 	public void insertLawyer(Lawyer lawyer);
+	
+	public Lawyer getLawyerById(int id);
 }

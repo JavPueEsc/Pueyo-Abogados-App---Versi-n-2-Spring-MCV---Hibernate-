@@ -39,7 +39,7 @@
   display:flex;
   justify-content:center;
   gap:12px;
-  margin-top:.75rem;
+  
 }
 
 .actions input[type="submit"],
@@ -49,10 +49,9 @@
   border-radius:6px;
   border:1px solid #0D2A3A;
   box-sizing:border-box;
-  min-width:160px;          /* opcional, para que no queden muy pequeños */
+  min-width:160px;       
 }
 
-/* Estilos opcionales */
 .btn--primary{ background:#0D2A3A; color:#fff; }
 .btn--secondary{ background:#fff; color:#0D2A3A; }
 .actions :hover{ filter:brightness(1.05); }

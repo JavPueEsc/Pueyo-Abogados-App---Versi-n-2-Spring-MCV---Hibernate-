@@ -41,6 +41,7 @@
   
   <spring:url value="/resources/js/menu.js" var="menuJs"/>
   <script src="${menuJs}" defer></script>
+
 </body>
 </html>
 

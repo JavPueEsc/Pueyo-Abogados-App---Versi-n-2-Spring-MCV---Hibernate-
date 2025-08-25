@@ -32,4 +32,12 @@ public class LawyerDAOImpl implements LawyerDAO{
 		session.persist(lawyer);
 	}
 
+	@Override
+	@Transactional
+	public Lawyer getLawyerById(int id) {
+		Session session = sessionFactory.getCurrentSession();
+		Lawyer lawyer= session.find(Lawyer.class, id);
+		return lawyer;
+	}
+
 }
