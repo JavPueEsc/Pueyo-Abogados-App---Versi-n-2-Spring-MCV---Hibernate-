@@ -54,7 +54,7 @@ public class Controller_Lawyer {
 	}
 	
 	@PostMapping("/deleteLawyer")
-	public String deleteLawyer(@RequestParam int id) {
+	public String deleteLawyer(@RequestParam("lawyerId") int id) {
 		lawyerDAO.deleteLawyer(id);
 		return "redirect:/lawyers";
 	}

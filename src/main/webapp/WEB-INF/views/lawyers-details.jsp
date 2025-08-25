@@ -56,7 +56,10 @@
 		<br/>
 		<div class="actions">
 				<input type="submit" value="Modificar" formaction="${pageContext.request.contextPath}/lawyers/updateLawyer" onclick="if(!(confirm('¿Seguro?'))) return false"/>
-				<input type="submit" value="Eliminar" formaction="${pageContext.request.contextPath}/lawyers/deleteLawyer" onclick="if(!(confirm('¿Seguro que desea eliminar este abogado?'))) return false"/>
+				<c:url var="linkDelete" value="/lawyers/deleteLawyer">
+					<c:param name="lawyerId" value="${lawyer.id}"/>
+				</c:url>
+				<input type="submit" value="Eliminar" formaction="${linkDelete}" onclick="if(!(confirm('¿Seguro que desea eliminar este abogado?'))) return false"/>
 				<input type="button" value="Volver" onclick="window.location.href='<c:url value='/lawyers'/>'"/>
 		</div>
 	</form:form>
