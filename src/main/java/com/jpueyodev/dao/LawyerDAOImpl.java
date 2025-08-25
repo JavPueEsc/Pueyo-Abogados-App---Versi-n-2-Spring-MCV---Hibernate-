@@ -40,4 +40,12 @@ public class LawyerDAOImpl implements LawyerDAO{
 		return lawyer;
 	}
 
+	@Override
+	@Transactional
+	public void deleteLawyer(int id) {
+		Session session = sessionFactory.getCurrentSession();
+		var lawyer = session.find(Lawyer.class, id);
+		session.remove(lawyer);
+	}
+
 }

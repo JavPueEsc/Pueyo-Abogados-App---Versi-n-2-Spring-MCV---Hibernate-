@@ -52,4 +52,10 @@ public class Controller_Lawyer {
 		model.addAttribute("lawyer", lawyer);
 		return "lawyers-details";
 	}
+	
+	@PostMapping("/deleteLawyer")
+	public String deleteLawyer(@RequestParam int id) {
+		lawyerDAO.deleteLawyer(id);
+		return "redirect:/lawyers";
+	}
 }

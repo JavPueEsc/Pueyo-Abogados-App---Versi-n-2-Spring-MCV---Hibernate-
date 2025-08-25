@@ -7,6 +7,9 @@
 <t:layout title="lawyers-detail">
 
 <h1>Detalles del abogado</h1>
+
+<form:form method="POST" modelAttribute="lawyer">
+<form:hidden path="id"/>
 <div class="tabla tabla--fit" >
     		<div class="tabla__fit">
     			<table class="tabla__table">
@@ -49,13 +52,12 @@
 		</table>
 		</div>
 		</div>
+	
 		<br/>
 		<div class="actions">
-				<input type="submit" value="Modificar" onclick="if(!(confirm('¿Seguro?'))) return false"/>
-				
-				<input type="submit" value="Eliminar" onclick="if(!(confirm('¿Seguro?'))) return false"/>
-			
+				<input type="submit" value="Modificar" formaction="${pageContext.request.contextPath}/lawyers/updateLawyer" onclick="if(!(confirm('¿Seguro?'))) return false"/>
+				<input type="submit" value="Eliminar" formaction="${pageContext.request.contextPath}/lawyers/deleteLawyer" onclick="if(!(confirm('¿Seguro que desea eliminar este abogado?'))) return false"/>
 				<input type="button" value="Volver" onclick="window.location.href='<c:url value='/lawyers'/>'"/>
 		</div>
-
+	</form:form>
 </t:layout>
