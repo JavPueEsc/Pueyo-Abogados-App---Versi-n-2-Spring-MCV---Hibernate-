@@ -9,7 +9,6 @@
 <h1>Detalles del abogado</h1>
 
 <form:form method="POST" modelAttribute="lawyer">
-<form:hidden path="id"/>
 <div class="tabla tabla--fit" >
     		<div class="tabla__fit">
     			<table class="tabla__table">
@@ -52,14 +51,18 @@
 		</table>
 		</div>
 		</div>
-	
 		<br/>
 		<div class="actions">
-				<input type="submit" value="Modificar" formaction="${pageContext.request.contextPath}/lawyers/updateLawyer" onclick="if(!(confirm('¿Seguro?'))) return false"/>
+				<c:url var="linkUpdate" value="/lawyers/showLawyerUpdateForm">
+					<c:param name="lawyerId" value="${lawyer.id}"/>
+				</c:url>
+				<button type="button" onclick="location.href='${linkUpdate}'">Modificar</button>
+				
 				<c:url var="linkDelete" value="/lawyers/deleteLawyer">
 					<c:param name="lawyerId" value="${lawyer.id}"/>
 				</c:url>
 				<input type="submit" value="Eliminar" formaction="${linkDelete}" onclick="if(!(confirm('¿Seguro que desea eliminar este abogado?'))) return false"/>
+				
 				<input type="button" value="Volver" onclick="window.location.href='<c:url value='/lawyers'/>'"/>
 		</div>
 	</form:form>

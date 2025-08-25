@@ -19,7 +19,7 @@
     		<c:set var="textButton" value="Guardar"/>
   		</c:when>
   		<c:otherwise>
-    		<c:url var="formAction" value="/lawyers/${lawyer.id}"/>
+    		<c:url var="formAction" value="/lawyers/updateLawyer"/>
     		<c:set var="textButton" value="Actualizar"/>
   		</c:otherwise>
 	</c:choose>

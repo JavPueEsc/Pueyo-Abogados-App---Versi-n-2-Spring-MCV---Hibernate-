@@ -43,7 +43,8 @@
 }
 
 .actions input[type="submit"],
-.actions input[type="button"]{
+.actions input[type="button"],
+button{
   padding:.6rem 1rem;
   cursor:pointer;
   border-radius:6px;

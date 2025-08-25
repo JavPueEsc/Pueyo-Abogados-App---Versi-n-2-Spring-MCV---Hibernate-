@@ -48,4 +48,13 @@ public class LawyerDAOImpl implements LawyerDAO{
 		session.remove(lawyer);
 	}
 
+	@Override
+	@Transactional
+	public void updateLawyer(Lawyer lawyer) {
+		Session session = sessionFactory.getCurrentSession();
+		session.merge(lawyer);
+	}
+	
+	
+
 }

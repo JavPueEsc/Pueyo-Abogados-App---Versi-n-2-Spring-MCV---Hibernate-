@@ -58,4 +58,18 @@ public class Controller_Lawyer {
 		lawyerDAO.deleteLawyer(id);
 		return "redirect:/lawyers";
 	}
+	
+	@GetMapping("/showLawyerUpdateForm") 
+	public String showLawyerUpdateForm(@RequestParam("lawyerId") int id, Model model) {
+		var lawyer = lawyerDAO.getLawyerById(id);
+		model.addAttribute("modo", "update");
+		model.addAttribute("lawyer",lawyer);
+		return "Lawyers-form";
+	}
+	
+	@PostMapping("/updateLawyer")
+	public String updateLawyer(@ModelAttribute("lawyer")Lawyer lawyer) {
+		lawyerDAO.updateLawyer(lawyer);
+		return "redirect:/lawyers";
+	}
 }

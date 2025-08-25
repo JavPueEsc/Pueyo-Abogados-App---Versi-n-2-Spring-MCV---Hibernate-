@@ -13,4 +13,6 @@ public interface LawyerDAO {
 	public Lawyer getLawyerById(int id);
 	
 	public void deleteLawyer(int id);
+	
+	public void updateLawyer(Lawyer lawyer);
 }
