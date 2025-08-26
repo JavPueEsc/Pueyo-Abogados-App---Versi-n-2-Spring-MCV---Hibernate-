@@ -1,15 +1,22 @@
 package com.jpueyodev;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
-
 import org.springframework.format.annotation.DateTimeFormat;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Digits;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
+
 
 @Entity
 @Table(name="abogados")
@@ -20,27 +27,40 @@ public class Lawyer {
 	@Column(name="idAbogado")
 	private Integer id;
 	@Column(name="nombreAbogado")
+	@NotBlank(message="El campo 'Nombre' no puede quedarse vacío")
+	@Size(min=2, max=45, message="El nombre debe tener entre 2 y 45 caracteres.")
 	private String nombre;
 	@Column(name="apellidosAbogado")
+	@NotBlank(message="El campo 'Apellidos' no puede quedarse vacío")
+	@Size(min=2, max=100, message="Los apellidos deben tener entre 2 y 100 caracteres.")
 	private String apellidos;
 	@Column(name="dniAbogado")
 	private String dni;
 	@Column(name="telefonoAbogado")
+	@NotBlank(message="El campo 'Telefono' no puede quedarse vacío")
 	private String telefono;
 	@Column(name="mailAbogado")
+	@NotBlank(message="El campo 'Mail' no puede quedarse vacío")
+	@Email(message = "Debe tener un formato válido de correo electrónico")
 	private String mail;
 	@Column(name="fechaAltaAbogado")
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+	@NotNull(message="El campo 'Fecha de alta' no puede quedarse vacío")
 	private LocalDate fechaAlta;
 	@Column(name="numColegiadoAbogado")
-	private String numColegiado;
+	@NotNull(message="El campo 'Número de colegiado' no puede quedarse vacío")
+	@Positive(message="El número de colegiado debe ser mayor que 0")
+	private int numColegiado;
 	@Column(name="honorariosAbogado")
-	private Double honorarios;
+	@NotNull(message="El campo 'Honorarios' no puede quedarse vacío")
+	@Digits(integer = 8, fraction = 2, message = "Máx 8 enteros y 2 decimales")
+	@DecimalMin(value = "0.00", inclusive = false, message = "Los honorarios deben ser mayores que cero")
+	private BigDecimal honorarios;
 	
 	public Lawyer() {}
 
 	public Lawyer(String nombre, String apellidos, String dni, String telefono, String mail, LocalDate fechaAlta,
-			String numColegiado, Double honorarios) {
+			int numColegiado, BigDecimal honorarios) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.dni = dni;
@@ -107,19 +127,19 @@ public class Lawyer {
 		this.fechaAlta = fechaAlta;
 	}
 
-	public String getNumColegiado() {
+	public int getNumColegiado() {
 		return numColegiado;
 	}
 
-	public void setNumColegiado(String numColegiado) {
+	public void setNumColegiado(int numColegiado) {
 		this.numColegiado = numColegiado;
 	}
 
-	public Double getHonorarios() {
+	public BigDecimal getHonorarios() {
 		return honorarios;
 	}
 
-	public void setHonorarios(Double honorarios) {
+	public void setHonorarios(BigDecimal honorarios) {
 		this.honorarios = honorarios;
 	}
 

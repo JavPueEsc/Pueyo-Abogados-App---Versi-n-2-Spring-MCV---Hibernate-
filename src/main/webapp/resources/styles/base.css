@@ -59,6 +59,5 @@ ul { padding-inline-start: 0; list-style-position: inside; }
 .tabla__table th,.tabla__table td{ border: 1px solid #000; padding: 1rem; vertical-align: middle;
   white-space: nowrap; max-width: var(--cell-max); overflow: hidden; text-overflow: ellipsis;}
 .tabla__table td:nth-child(1),
-.tabla__table th:nth-child(1){
-  --cell-max: 40ch;
-}
+.tabla__table th:nth-child(1){--cell-max: 40ch;}
+.error{color:red; text-align:center;}

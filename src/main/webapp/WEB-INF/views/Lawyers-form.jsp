@@ -32,54 +32,54 @@
 		<div class="page-center">
 		<div class="form-grid">
 			<div class="field">
-				<form:label path="nombre">Nombre: </form:label>
+				<form:label path="nombre">Nombre* </form:label>
 				<form:input path="nombre" placeholder="Escriba el nombre"></form:input>
-				<form:errors path="nombre" cssClass="error"/>
+				<form:errors path="nombre" Class="error"/>
 			</div>
 			
 			<div class="field">
-				<form:label path="apellidos">Apellidos: </form:label>
+				<form:label path="apellidos">Apellidos* </form:label>
 				<form:input path="apellidos" placeholder="Escriba el apellido"></form:input>
-				<form:errors path="apellidos" cssClass="error"/>
+				<form:errors path="apellidos" Class="error"/>
 			</div>
 			
 			<div class="field">
-				<form:label path="dni">DNI: </form:label>
+				<form:label path="dni">DNI </form:label>
 				<form:input path="dni" placeholder="Escriba el DNI"></form:input>
-				<form:errors path="dni" cssClass="error"/>
+				<form:errors path="dni" Class="error"/>
 			</div>
 			
 			<div class="field">
-				<form:label path="telefono">Telefono: </form:label>
+				<form:label path="telefono">Telefono* </form:label>
 				<form:input path="telefono" placeholder="Escriba el telefono"></form:input>
-				<form:errors path="telefono" cssClass="error"/>
+				<form:errors path="telefono" Class="error"/>
 			</div>
 			
 			<div class="field">
-				<form:label path="mail">Mail: </form:label>
+				<form:label path="mail">Mail* </form:label>
 				<form:input path="mail" placeholder="Escriba el mail"></form:input>
-				<form:errors path="mail" cssClass="error"/>
+				<form:errors path="mail" Class="error"/>
 			</div>
 			
 			<div class="field">
-				<form:label path="fechaAlta">Fecha de alta: </form:label>
+				<form:label path="fechaAlta">Fecha de alta* </form:label>
 				<form:input path="fechaAlta" type="date"></form:input>
-				<form:errors path="fechaAlta" cssClass="error"/>
+				<form:errors path="fechaAlta" Class="error"/>
 			</div>
 			
 			<div class="field">
-				<form:label path="numColegiado">Número de colegiado: </form:label>
+				<form:label path="numColegiado">Número de colegiado* </form:label>
 				<form:input path="numColegiado" placeholder="Escriba el núm. colegiado"></form:input>
-				<form:errors path="numColegiado" cssClass="error"/>
+				<form:errors path="numColegiado" Class="error"/>
 			</div>
 			
 			<div class="field">
-				<form:label path="honorarios">Honorarios: </form:label>
+				<form:label path="honorarios">Honorarios* </form:label>
 				<form:input path="honorarios" placeholder="Introduzca los honorarios"></form:input>
-				<form:errors path="honorarios" cssClass="error"/>
+				<form:errors path="honorarios" Class="error"/>
 			</div>
 			<div class="actions">
-				<input type="submit" value="${textButton}" onclick="if(!(confirm('¿Seguro?'))) return false"/>
+				<input type="submit" value="${textButton}" onclick="if(!(confirm('¿Esta seguro?'))) return false"/>
 			
 				<input type="button" value="Cancelar" onclick="window.location.href='<c:url value='/lawyers'/>'"/>
 			</div>
@@ -87,5 +87,7 @@
 		</div>
 		
 	</form:form>
+	<br/>
+	<p>Los elementos marcados con (*) son obligatorios</p>
 
 </t:layout>
